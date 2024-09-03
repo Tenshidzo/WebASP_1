@@ -64,7 +64,7 @@ namespace WebASP_1.Views
                     Button btn = new Button();
                     btn.Text = matrix[i, j].ToString();
                     btn.Click += new EventHandler(Button_Click);
-                    btn.ID = "btn_" + i + "_" + j; // Уникальный ID для каждой кнопки
+                    btn.ID = "btn_" + i + "_" + j;
                     MatrixPanel.Controls.Add(btn);
                 }
                 MatrixPanel.Controls.Add(new LiteralControl("<br />"));
@@ -123,13 +123,11 @@ namespace WebASP_1.Views
             }
             else
             {
-                // Если уже нажата первая кнопка
                 int firstValue = int.Parse(FirstButtonValueHidden.Value);
                 int secondValue = int.Parse(clickedButton.Text);
 
                 if (firstValue + secondValue == 10)
                 {
-                    // Если сумма равна 10, обе кнопки скрываются и счет увеличивается на 1
                     Button firstButton = (Button)FindControl(FirstButtonIDHidden.Value);
                     firstButton.Visible = false;
                     clickedButton.Visible = false;
@@ -146,7 +144,6 @@ namespace WebASP_1.Views
 
         protected void ResetGame(object sender, EventArgs e)
         {
-            // Сброс игры
             MatrixPanel.Controls.Clear();
             ScoreLabel.Text = "Счёт: 0";
             MatrixSizeHidden.Value = string.Empty;
