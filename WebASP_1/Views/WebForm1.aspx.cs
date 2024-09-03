@@ -19,7 +19,7 @@ namespace WebASP_1.Views
             }
             else
             {
-                // Восстановление матрицы при постбеке
+                
                 RestoreMatrixFromHiddenField();
             }
         }
@@ -29,13 +29,13 @@ namespace WebASP_1.Views
             Button clickedButton = (Button)sender;
             int matrixSize = int.Parse(clickedButton.Text[0].ToString());
 
-            // Генерация матрицы с случайными числами
+            
             int[,] matrix = GenerateMatrixWithRandomNumbers(matrixSize);
 
-            // Сохранение матрицы в скрытое поле
+            
             SaveMatrixToHiddenField(matrix);
 
-            // Отображение матрицы
+            
             DisplayMatrix(matrix);
         }
 
@@ -106,7 +106,7 @@ namespace WebASP_1.Views
                     }
                 }
 
-                // Отображение матрицы после восстановления
+                
                 DisplayMatrix(matrix);
             }
         }
@@ -117,7 +117,7 @@ namespace WebASP_1.Views
 
             if (string.IsNullOrEmpty(FirstButtonValueHidden.Value))
             {
-                // Если первая кнопка не была нажата
+                
                 FirstButtonValueHidden.Value = clickedButton.Text;
                 FirstButtonIDHidden.Value = clickedButton.ID;
             }
